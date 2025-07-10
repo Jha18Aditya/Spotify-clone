@@ -73,7 +73,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   background-color: #1e1e1e;
-  padding: 2px;
+   padding: 0 15px ;
   border-radius: 40px;
   width: 27em;
   height: 3rem;
