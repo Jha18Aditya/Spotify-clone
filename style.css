@@ -91,7 +91,7 @@ nav {
   outline: none;
 }
 
-.search-box:hover{
+.search-box:hover {
   border: 2px solid white;
 }
 
@@ -178,6 +178,13 @@ nav {
   transform: scale(1.1);
 }
 
+.search-box,
+.premium-btn,
+.login-btn,
+.profile-circle {
+  position: relative;
+  z-index: 999;
+}
 
 .sidebar {
   height: 88.5%;
@@ -264,6 +271,26 @@ nav {
 }
 
 
+header.navbar {
+  overflow: visible;
+}
+
+.navbar-left,
+.navbar-right {
+  overflow: visible;
+}
+
+.fas,
+.premium-btn,
+.profile-circle {
+  position: relative;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 10;
+}
+
+
 .b1,
 .b2 {
   display: flex;
@@ -280,6 +307,14 @@ nav {
 
 .b2 {
   width: 8.2em;
+}
+
+.b2:hover {
+  transform: scale(1.05);
+}
+
+.b1:hover {
+  transform: scale(1.05);
 }
 
 .s1 {
@@ -377,6 +412,31 @@ nav {
   margin-bottom: 2rem;
 }
 
+
+.tscard-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 12px;
+  padding: 0 8px;
+  background-color: #121212;
+}
+
+.tscard {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+.tscard-container {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.tscard-container::-webkit-scrollbar {
+  display: none;
+}
+
+
 .tsnav {
   background-color: #121212;
   display: flex;
@@ -412,9 +472,17 @@ nav {
 .tscard {
   background-color: rgb(247, 244, 244, 0);
   padding: 1rem;
-  display: inline-block;
-  flex-wrap: wrap;
+  /* display: inline-block;
+  flex-wrap: wrap; */
+  position: relative;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-snap-align: start;
+  overflow: visible;
 }
+
 
 
 .tscard:hover {
@@ -454,20 +522,22 @@ nav {
 }
 
 .tscard .play {
-  height: 3rem;
-  width: 3rem;
-  background: transparent;
   position: absolute;
-  margin-top: 6.5rem;
-  margin-right: 0.6rem;
+  top: 9rem;
+  left: 9rem;
+  transform: translate(-50%, -50%);
+  width: 3.5rem;
+  height: 3.5rem;
+  background: transparent;
   opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.4s ease, visibility 1s ease;
+  transition: opacity 0.2s;
+  pointer-events: none;
+  z-index: 5;
 }
 
 .tscard:hover .play {
   opacity: 1;
-  visibility: visible;
+  /* visibility: visible; */
 }
 
 .tscard span {
@@ -948,52 +1018,67 @@ footer {
   .sidebar {
     display: none;
   }
- .music-player{
-  height: 3.5rem;
-  bottom: 0;
- }
+
+  .music-player {
+    height: 3.5rem;
+    bottom: 0;
+  }
+
   .music-player img {
     display: none;
   }
 
-  .search-box{
+  .search-box {
     width: 14rem;
   }
 
-  .search-box Input{
+  .search-box Input {
     font-size: 12px;
   }
 
-  .fa-microphone{
+  .fa-microphone {
     display: none;
   }
+
   .tsnav span {
     display: none;
   }
 
   .tsnav h1 {
     font-size: 14px;
+    padding-bottom: 10px;
   }
 
   .atscard,
   .tscard {
-    height: 7rem;
+    height: 8rem;
     padding-bottom: 0;
 
   }
 
   .atsimg {
-    height: 5rem;
-    width: 5rem;
+    height: 6rem;
+    width: 6rem;
+  }
+
+  .tscard {
+    padding: 4px;
+
+  }
+
+  .trendingsong {
+    padding: 0 0 0 10px;
   }
 
   .tsimg img {
-    height: 5rem;
-    width: 5rem;
+    height: 6rem;
+    width: 6rem;
+
   }
 
+
   .tscard span {
-    font-size: 7px;
+    font-size: 10px;
   }
 
   footer {
@@ -1002,6 +1087,10 @@ footer {
   }
 
   footer .footer-legal {
+    display: none;
+  }
+
+  .tscard .play {
     display: none;
   }
 }
