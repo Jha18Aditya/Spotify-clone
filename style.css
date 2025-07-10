@@ -1093,4 +1093,8 @@ footer {
   .tscard .play {
     display: none;
   }
+
+  .maincontent .n1 {
+    margin: 0;
+  }
 }
